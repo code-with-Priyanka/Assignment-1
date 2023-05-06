@@ -17,7 +17,7 @@ class Calculator:
         res = self.num1/self.num2
         return res
       
-def user_input():
+def calculation():
     # Ask the user for the first number
     num1 = float(input("Enter the first number: "))
     
@@ -46,10 +46,10 @@ def user_input():
     # Ask the user if they want to perform another calculation
     another_calculation = input("Do you want to perform another calculation? (Y/N): ")
     if another_calculation.upper() == "Y":
-        user_input()
+        calculation()
     else:
         print("Goodbye!")
 
 # Call the calculator function to start the program
-user_input()
+calculation()
 
