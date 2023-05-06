@@ -1,39 +1,55 @@
-class Calc:
-    def __init__(self,first_num,second_num):
-        self.first_num = first_num
-        self.second_num = second_num
+class Calculator:
+    def __init__(self,num1,num2):
+        self.num1 = num1
+        self.num2 = num2
     def add(self):
-        res = self.first_num+self.second_num
+        res = self.num1+self.num2
         return res
     def sub(self):
-        res = self.first_num-self.second_num
-        return res 
+        res = self.num1-self.num2
+        return res
     def mul(self):
-        res = self.first_num*self.second_num
+        res = self.num1*self.num2
         return res
     def div(self):
-        res = self.first_num / self.second_num
-        return res 
- 
-first_num = int(input("Enter first number\n"))
-second_num = int(input("Enter second number\n"))
-obj = Calc(first_num,second_num)
-user_req = input("Enter the operations you want to perform:\n Add- 1\n Sub- 2\n Mul- 3\n Div- 4\n")
-def main():
-    while True:
-        if user_req == "1":
-            show_result = obj.add()
-            print(show_result)
-        elif user_req == "2":
-            show_result = obj.sub()
-            print(show_result)
-        elif user_req == "3":
-            show_result = obj.mul()
-            print(show_result)  
-        elif user_req == "4":
-            show_result = obj.div()
-            print(show_result)
-        else:
-            print("Invalid Options\n")     
-            
-            
+        if(self.num2 == 0):
+            return "Error: division by zero"
+        res = self.num1/self.num2
+        return res
+      
+def user_input():
+    # Ask the user for the first number
+    num1 = float(input("Enter the first number: "))
+    
+    # Ask the user for the operator
+    operator = input("Enter an operator (+, -, *, /): ")
+    
+    # Ask the user for the second number
+    num2 = float(input("Enter the second number: "))
+    calculator = Calculator(num1,num2)  
+    # Perform the calculation based on the operator
+    if operator == "+":
+        result = calculator.add()
+    elif operator == "-":
+        result = calculator.sub()
+    elif operator == "*":
+        result = calculator.mul()
+    elif operator == "/":
+        result = calculator.div()
+    else:
+        print("Invalid operator.")
+        return
+    
+    # Print the result
+    print(f"{num1} {operator} {num2} = {result}")
+    
+    # Ask the user if they want to perform another calculation
+    another_calculation = input("Do you want to perform another calculation? (Y/N): ")
+    if another_calculation.upper() == "Y":
+        user_input()
+    else:
+        print("Goodbye!")
+
+# Call the calculator function to start the program
+user_input()
+
