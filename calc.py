@@ -1,3 +1,7 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-class-docstring
+# pylint: disable=missing-function-docstring
+
 class Calculator:
     def __init__(self,num1,num2):
         self.num1 = num1
@@ -12,11 +16,10 @@ class Calculator:
         res = self.num1*self.num2
         return res
     def div(self):
-        if(self.num2 == 0):
+        if self.num2 == 0:
             return "Error: division by zero"
         res = self.num1/self.num2
-        return res
-      
+        return res    
 def calculation():
     # Ask the user for the first number
     num1 = float(input("Enter the first number: "))
@@ -52,4 +55,3 @@ def calculation():
 
 # Call the calculator function to start the program
 calculation()
-
