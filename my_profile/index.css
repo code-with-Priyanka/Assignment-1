@@ -1,0 +1,24 @@
+/* body {
+    background-color: black;
+  } */
+.header{
+    background-color: black;
+    color: beige;
+    height: 150px;
+    text-align: center;
+}
+.header h3{
+    word-spacing: 0pc;
+    
+}
+.flex3 {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-left: 30%;
+  }
+.flex3 .flex-items { 
+   
+    margin: 0;
+    padding-left: 15px;
+} 

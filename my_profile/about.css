@@ -1,0 +1,22 @@
+.about {
+    display: flex;
+    justify-content: space-between;
+  }
+  #topic{
+    text-align: center;
+  }
+  .profile,
+  .skills {
+    flex: 1;
+  }
+  .skills-list {
+    display: flex;
+    margin-left: 5%;
+    justify-content: space-evenly;
+    padding: 10px;
+    
+  }
+  
+  /* .skills-list li {
+    margin-right: 10px;
+  } */
